@@ -3,6 +3,7 @@ package com.example.weatherapp.Server
 import com.example.weatherapp.model.CityResponseApi
 import com.example.weatherapp.model.CurrentResponseApi
 import com.example.weatherapp.model.ForecastResponseApi
+
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -16,6 +17,7 @@ interface ApiServices {
         @Query("units") units: String,
         @Query("appid") ApiKey: String,
     ): Call<CurrentResponseApi>
+
 
     @GET("data/2.5/forecast")
     fun getForecastWeather(
@@ -32,4 +34,5 @@ interface ApiServices {
         @Query("limit") limit: Int,
         @Query("appid") ApiKey: String
     ): Call<CityResponseApi>
+
 }
