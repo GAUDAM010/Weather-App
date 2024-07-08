@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.weatherapp.Repository.WeatherRepository
 import com.example.weatherapp.Server.ApiClient
 import com.example.weatherapp.Server.ApiServices
+import retrofit2.create
 
 class WeatherViewModel(val repository: WeatherRepository):ViewModel() {
 
