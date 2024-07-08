@@ -20,6 +20,7 @@ import com.example.weatherapp.model.ForecastResponseApi
 import com.github.matteobattilana.weather.PrecipType
 import eightbitlab.com.blurview.RenderScriptBlur
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import java.util.Calendar
 
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             cityTxt.text = name
             progressBar.visibility = View.VISIBLE
             weatherViewModel.loadCurrentWeather(lat, lon, "metric").enqueue(object :
-                retrofit2.Callback<CurrentResponseApi> {
+                Callback<CurrentResponseApi> {
                 override fun onResponse(
                     call: Call<CurrentResponseApi>,
                     response: Response<CurrentResponseApi>
@@ -111,7 +112,7 @@ class MainActivity : AppCompatActivity() {
 
             //forecast temp
             weatherViewModel.loadForecastWeather(lat, lon, "metric")
-                .enqueue(object : retrofit2.Callback<ForecastResponseApi> {
+                .enqueue(object : Callback<ForecastResponseApi> {
                     override fun onResponse(
                         call: Call<ForecastResponseApi>,
                         response: Response<ForecastResponseApi>
