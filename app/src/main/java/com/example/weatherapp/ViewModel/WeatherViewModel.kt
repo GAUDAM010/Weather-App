@@ -6,8 +6,8 @@ import com.example.weatherapp.Server.ApiClient
 import com.example.weatherapp.Server.ApiServices
 import retrofit2.create
 
-class WeatherViewModel(val repository: WeatherRepository) : ViewModel() {
 
+class WeatherViewModel(val repository: WeatherRepository) : ViewModel() {
     constructor() : this(WeatherRepository(ApiClient().getClient().create(ApiServices::class.java)))
 
     fun loadCurrentWeather(lat: Double, lng: Double, unit: String) =
